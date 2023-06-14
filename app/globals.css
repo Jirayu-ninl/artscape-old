@@ -18,10 +18,69 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  @apply Anim-2
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */;
+}
+
+.TH {
+  font-family: 'Prompt' !important;
+}
+
+/* *! Animate */
+
+.Anim {
+  @apply transition duration-300 xl:hover:duration-200;
+}
+
+.Anim-1 {
+  @apply transition duration-500 xl:hover:duration-300;
+}
+
+.Anim-2 {
+  @apply transition duration-700 xl:hover:duration-500;
+}
+
+.AnimScale {
+  @apply xl:hover:scale-150;
+}
+
+.AnimScale-sm {
+  @apply xl:hover:scale-110;
+}
+
+.AnimOpacity-20 {
+  @apply opacity-20 hover:opacity-100;
+}
+
+.AnimOpacity-40 {
+  @apply opacity-40 hover:opacity-100;
+}
+
+.AnimOpacity-60 {
+  @apply opacity-60 hover:opacity-100;
+}
+
+.AnimOpacity-80 {
+  @apply opacity-80 hover:opacity-100;
+}
+
+.AnimTranslate-10 {
+  @apply xl:hover:-translate-x-2.5 xl:hover:-translate-y-2.5;
+}
+
+.AnimRotate-1 {
+  @apply xl:hover:-rotate-1;
+}
+
+.AnimTranslate-4 {
+  @apply xl:hover:-translate-x-1 xl:hover:-translate-y-1;
+}
+
+.AnimSaturate-0 {
+  @apply xl:saturate-0 xl:hover:saturate-100;
 }
