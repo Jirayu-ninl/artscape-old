@@ -20,6 +20,8 @@ import {
   PerspectiveCamera,
 } from '@react-three/drei'
 import ExtrudedSVG from './utils/extrudedSvg'
+
+import Store from '@global/store'
 // import {
 //   EffectComposer,
 //   HueSaturation,
@@ -51,6 +53,7 @@ function MainApp() {
 }
 
 const Scene = () => {
+  const _dark = Store((state) => state.dark)
   const userCam = useRef<THREE.PerspectiveCamera | undefined>(null)
 
   useFrame(({ mouse }) => {
@@ -90,6 +93,8 @@ const Scene = () => {
           ref={userCam}
         />
       </group>
+      <fog attach='fog' args={[_dark ? '#101010' : 'white', 5, 10]} />
+      <fog attach='fog' args={['#101010', 0, 1000]} />
       {/* <color attach='background' args={['#fff']} /> */}
       {/* <Text
           config={config}
