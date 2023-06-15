@@ -6,7 +6,7 @@ const store: tStore = (set) => ({
   setPerformances: (level) => set(() => ({ performance: level })),
   gpuTier: null,
   setGpuTier: (gpuTier) => set(() => ({ gpuTier: gpuTier })),
-  dark: true,
+  dark: false,
   setDark: (dark) => set(() => ({ dark: dark })),
   cursor: false,
   setCursor: (cursor) => set(() => ({ cursor: cursor })),

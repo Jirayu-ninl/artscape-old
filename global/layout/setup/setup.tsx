@@ -25,9 +25,9 @@ const Theme = () => {
         !('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches
       ) {
-        _setDark(true)
-      } else {
         _setDark(false)
+      } else {
+        _setDark(true)
       }
     }
     InitState()

@@ -43,7 +43,8 @@ export const contacts = {
 export const theme = {
   defaultTheme: 'dark',
   color: {
-    primary: {
+    primary: '#07EBB5',
+    primaryShade: {
       0: '#FFE171',
       1: '#FFD539',
       2: '#FFC900',

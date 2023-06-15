@@ -1,4 +1,6 @@
-# This is a [Artscape](https://artscape.day/).
+# [Artscape](https://artscape.day/).
+
+#### *"Unleash Your Imagination, Connect with Fellow Visionaries, and Ignite Your Creative Spirit"*
 
 This app powered by Aurora Framework by [TheIceJi](https://theiceji.com/)
 
