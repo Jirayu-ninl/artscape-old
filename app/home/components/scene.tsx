@@ -3,20 +3,19 @@
 
 import { useRef } from 'react'
 import * as THREE from 'three'
-import { RGBELoader } from 'three-stdlib'
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import {
   Loader,
-  Center,
-  Text3D,
-  Instance,
+  // Center,
+  // Text3D,
+  // Instance,
   Instances,
   Environment,
   Lightformer,
-  OrbitControls,
+  // OrbitControls,
   RandomizedLight,
   AccumulativeShadows,
-  MeshTransmissionMaterial,
+  // MeshTransmissionMaterial,
   PerspectiveCamera,
 } from '@react-three/drei'
 import ExtrudedSVG from './utils/extrudedSvg'
@@ -64,21 +63,11 @@ const Scene = () => {
         mouse.y * Math.PI * -0.5 + 18,
         0.03,
       )
-      // UserCam.rotation.x = THREE.MathUtils.lerp(
-      //   UserCam.rotation.x,
-      //   -mouse.y * Math.PI * 0.02 - 0.05,
-      //   0.03,
-      // )
       UserCam.position.x = THREE.MathUtils.lerp(
         UserCam.position.x,
         mouse.x * Math.PI - 6,
         0.03,
       )
-      // UserCam.rotation.y = THREE.MathUtils.lerp(
-      //   UserCam.rotation.y,
-      //   mouse.x * Math.PI * 0.02,
-      //   0.03,
-      // )
     }
   })
 
@@ -175,7 +164,6 @@ const Grid = ({
   lineWidth?: number
   height?: number
 }) => (
-  // Renders a grid and crosses as instances
   <Instances position={[0, 0, 0]}>
     <planeGeometry args={[lineWidth, height]} />
     <meshBasicMaterial color='#999' />
@@ -198,45 +186,45 @@ const Grid = ({
   </Instances>
 )
 
-function Text({
-  children,
-  config,
-  font = '/Inter_Medium_Regular.json',
-  ...props
-}: {
-  children: React.ReactNode
-  config: any
-  font: string
-  position?: number[]
-  scale?: number
-}) {
-  const texture = useLoader(
-    RGBELoader,
-    'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr',
-  )
-  return (
-    <>
-      <group>
-        <Center scale={[0.8, 1, 1]} front top {...props}>
-          <Text3D
-            castShadow
-            bevelEnabled
-            font={font}
-            scale={5}
-            letterSpacing={-0.03}
-            height={0.25}
-            bevelSize={0.01}
-            bevelSegments={10}
-            curveSegments={128}
-            bevelThickness={0.01}
-          >
-            {children}
-            <MeshTransmissionMaterial {...config} background={texture} />
-          </Text3D>
-        </Center>
-      </group>
-    </>
-  )
-}
+// function Text({
+//   children,
+//   config,
+//   font = '/Inter_Medium_Regular.json',
+//   ...props
+// }: {
+//   children: React.ReactNode
+//   config: any
+//   font: string
+//   position?: number[]
+//   scale?: number
+// }) {
+//   const texture = useLoader(
+//     RGBELoader,
+//     'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr',
+//   )
+//   return (
+//     <>
+//       <group>
+//         <Center scale={[0.8, 1, 1]} front top {...props}>
+//           <Text3D
+//             castShadow
+//             bevelEnabled
+//             font={font}
+//             scale={5}
+//             letterSpacing={-0.03}
+//             height={0.25}
+//             bevelSize={0.01}
+//             bevelSegments={10}
+//             curveSegments={128}
+//             bevelThickness={0.01}
+//           >
+//             {children}
+//             <MeshTransmissionMaterial {...config} background={texture} />
+//           </Text3D>
+//         </Center>
+//       </group>
+//     </>
+//   )
+// }
 
 export default MainApp
